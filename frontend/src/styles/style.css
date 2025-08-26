@@ -1,0 +1,115 @@
+/* '--' syntax is used to define CSS custom properties, commonly known as CSS variables.
+Here, --header-bg is the name of the custom property.
+It’s stored on :root, so it’s globally accessible throughout your CSS.
+You can get/set --variables easily from JS using getComputedStyle or even change them at runtime.
+var(--header-bg) fetches the value of the variable. */
+
+
+
+:root {
+  --header-bg: #8f4418;
+  --footer-bg: #51260d;
+  --background: #F8F9FA;
+  --primary-text: #333333;
+  --cta-button: #8f4418;
+  --cta-hover: #51260d;
+}
+
+/* Apply background and text globally */
+body {
+  background-color: var(--background);
+  color: var(--primary-text);
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body h2{
+  color: var(--footer-bg);
+}
+body h3, h4, h5, h6{
+  color: var(--header-bg);
+}
+
+body .blog_buttons:hover {
+  background-color: var(--footer-bg);
+}
+
+html {
+ scroll-behavior: smooth;
+}
+
+/* Header and Footer */
+.header {
+  background-color: var(--header-bg);
+  color: white;
+}
+
+.footer {
+  background-color: var(--footer-bg);
+  color: #E0E0E0;
+  padding: 1rem 0;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.footer p{
+  margin-top: 0px;;
+  margin-bottom: 0px;
+}
+
+.custom-caption {
+  position: absolute;  /*lets you place elements anywhere over the slider image*/
+  top: 30%;
+  left: 10%;
+  color: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.4);   /*makes text readable over the image.*/
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 40%;
+}
+
+.book-btn {
+  margin-top: 10px;
+}
+
+.custom-blog-caption {
+  position: absolute;  
+  bottom: 10%;
+  left: 10%;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);   
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 40%;
+  text-align: left;
+}
+
+
+/* CTA Button */
+.cta-button {
+  background-color: var(--cta-button);
+  border: none;
+  color: white;
+  padding: 0.3rem 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.cta-button:hover {
+  background-color: var(--cta-hover);
+}
+
+.category-button {
+  background-color: teal;
+  border: none;
+  color: rgb(250, 248, 248);
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.category-button:hover {
+  background-color: rgb(45, 170, 158);
+}
